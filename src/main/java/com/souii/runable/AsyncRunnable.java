@@ -4,6 +4,7 @@ package com.souii.runable;
  * Created by zx on 2015/10/20.
  */
 public class AsyncRunnable implements Runnable {
+    private int count = 10;
     public AsyncRunnable() {
 
     }
@@ -13,18 +14,29 @@ public class AsyncRunnable implements Runnable {
     @Override
     public void run() {
         for(int i=0;i<10;++i){
-            if(count>0){
-//                try{
-//                    Thread.sleep(1000);
-//                }catch(InterruptedException e){
-//                    e.printStackTrace();
-//                }
-                System.out.println(count--);
-            }
+         sale();
+        }
+    }
+
+    //加入线程同步方法
+    public synchronized void sale(){
+        if (count > 0) {
+            System.out.println(count--);
         }
     }
 
 
+public static void main(String[] args){
+    AsyncRunnable he=new AsyncRunnable();
+    Thread h1=new Thread(he);
+    Thread h2=new Thread(he);
+    Thread h3=new Thread(he);
 
-    private int count = 10;
+
+    h1.start();
+    h2.start();
+    h3.start();
+
+}
+
 }

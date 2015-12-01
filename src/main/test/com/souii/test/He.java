@@ -6,6 +6,9 @@ import com.souii.list.LinkListUtil;
 import com.souii.runable.AsyncRunnable;
 import com.souii.runable.HelloRunnable;
 import com.souii.runable.SleepRunnable;
+import com.souii.runable.producerConsumer.Consumer;
+import com.souii.runable.producerConsumer.Info;
+import com.souii.runable.producerConsumer.Producer;
 import com.souii.thread.HelloThread;
 import junit.framework.TestCase;
 import org.junit.Test;
@@ -78,5 +81,22 @@ public class He extends TestCase {
         h2.start();
         h3.start();
         h4.start();
+    }
+
+    @Test
+    public void testConsumer(){
+        Info info=new Info();
+        Producer pro=new Producer(info);
+        Consumer con=new Consumer(info);
+        new Thread(pro).start();
+        new Thread(con).start();
+    }
+
+    public static void main(String[] args){
+        Info info=new Info();
+        Producer pro=new Producer(info);
+        Consumer con=new Consumer(info);
+        new Thread(pro).start();
+        new Thread(con).start();
     }
 }

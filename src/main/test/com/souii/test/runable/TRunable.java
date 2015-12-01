@@ -1,15 +1,12 @@
-package com.souii.test;
+package com.souii.test.runable;
 
-import com.souii.Hello;
-import com.souii.list.LinkList;
-import com.souii.list.LinkListUtil;
+
 import com.souii.runable.AsyncRunnable;
 import com.souii.runable.HelloRunnable;
 import com.souii.runable.SleepRunnable;
 import com.souii.runable.producerConsumer.Consumer;
 import com.souii.runable.producerConsumer.Info;
 import com.souii.runable.producerConsumer.Producer;
-import com.souii.thread.HelloThread;
 import junit.framework.TestCase;
 import org.junit.Test;
 
@@ -17,30 +14,7 @@ import org.junit.Test;
 /**
  * Created by zx on 2015/10/16.
  */
-public class He extends TestCase {
-    @Test
-    public void testList(){
-        LinkListUtil link = new LinkListUtil();
-        LinkList delete = null;
-        for(int i=0;i<10;i++){
-            LinkList temp = new LinkList(i);
-            if(i==9){
-                delete = temp;
-            }
-            link.insert(temp);
-        }
-        link.print();
-        link.delete(delete);
-        link.print();
-    }
-
-    @Test
-    public void testThread(){
-        HelloThread h1=new HelloThread("A");
-        HelloThread h2=new HelloThread("B");
-        h1.start();
-        h2.start();
-    }
+public class TRunable extends TestCase {
 
     @Test
     public void testRunnable(){

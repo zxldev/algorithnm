@@ -5,11 +5,10 @@ package com.souii.runable;
  */
 public class AsyncRunnable implements Runnable {
     private int count = 10;
+
     public AsyncRunnable() {
 
     }
-
-
 
     @Override
     public void run() {
@@ -25,18 +24,14 @@ public class AsyncRunnable implements Runnable {
         }
     }
 
+    public static void main(String[] args){
+        AsyncRunnable he=new AsyncRunnable();
+        Thread h1=new Thread(he);
+        Thread h2=new Thread(he);
+        Thread h3=new Thread(he);
 
-public static void main(String[] args){
-    AsyncRunnable he=new AsyncRunnable();
-    Thread h1=new Thread(he);
-    Thread h2=new Thread(he);
-    Thread h3=new Thread(he);
-
-
-    h1.start();
-    h2.start();
-    h3.start();
-
-}
-
+        h1.start();
+        h2.start();
+        h3.start();
+    }
 }

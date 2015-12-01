@@ -4,6 +4,8 @@ package com.souii.runable;
  * Created by zx on 2015/10/20.
  */
 public class SleepRunnable implements Runnable {
+    private String name;
+
     public SleepRunnable() {
 
     }
@@ -26,8 +28,4 @@ public class SleepRunnable implements Runnable {
             System.out.println(name + "运行     " + i);
         }
     }
-
-
-
-    private String name;
 }

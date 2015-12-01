@@ -10,6 +10,11 @@ public class LinkListUtil {
         length = 0;
     }
 
+    /**
+     * 向列表中插入元素
+     * @param list
+     * @return
+     */
     public int insert(LinkList list){
         //头插法插入节点
         if(header!=null){
@@ -20,6 +25,11 @@ public class LinkListUtil {
         return 0;
     }
 
+    /**
+     * 删除列表中的指定元素
+     * @param list
+     * @return
+     */
     public int delete(LinkList list){
         //如果删除为空，直接返回错误
         if(list != null){
@@ -42,6 +52,9 @@ public class LinkListUtil {
 
     }
 
+    /**
+     * 打印列表
+     */
     public void print(){
         LinkList p= header;
         //循环数据节点

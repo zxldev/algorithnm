@@ -4,8 +4,9 @@ package com.souii.runable;
  * Created by zx on 2015/10/20.
  */
 public class HelloRunnable implements Runnable {
-    public HelloRunnable() {
+    private String name;
 
+    public HelloRunnable() {
     }
 
     public HelloRunnable(String name) {
@@ -18,8 +19,4 @@ public class HelloRunnable implements Runnable {
             System.out.println(name + "运行     " + i);
         }
     }
-
-
-
-    private String name;
 }

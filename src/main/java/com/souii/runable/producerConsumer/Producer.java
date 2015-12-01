@@ -5,6 +5,7 @@ package com.souii.runable.producerConsumer;
  */
 public class Producer implements Runnable{
     private Info info=null;
+
     public Producer(Info info){
         this.info=info;
     }

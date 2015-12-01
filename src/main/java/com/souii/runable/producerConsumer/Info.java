@@ -5,6 +5,9 @@ package com.souii.runable.producerConsumer;
  */
 public class Info {
 
+    private String name = "Rollen";
+    private int age = 20;
+
     public String getName() {
         return name;
     }
@@ -21,8 +24,4 @@ public class Info {
         this.age = age;
     }
 
-
-
-    private String name = "Rollen";
-    private int age = 20;
 }

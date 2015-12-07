@@ -2,6 +2,7 @@ package com.souii.test.runable;
 
 
 import com.souii.runable.AsyncRunnable;
+import com.souii.runable.HashMapRunnable;
 import com.souii.runable.HelloRunnable;
 import com.souii.runable.SleepRunnable;
 import com.souii.runable.producerConsumer.Consumer;
@@ -66,11 +67,22 @@ public class TRunable extends TestCase {
         new Thread(con).start();
     }
 
+    @Test
+    public void testHashMap(){
+
+    }
+
     public static void main(String[] args){
-        Info info=new Info();
-        Producer pro=new Producer(info);
-        Consumer con=new Consumer(info);
-        new Thread(pro).start();
-        new Thread(con).start();
+//        Info info=new Info();
+//        Producer pro=new Producer(info);
+//        Consumer con=new Consumer(info);
+//        new Thread(pro).start();
+//        new Thread(con).start();
+        HashMapRunnable s = new HashMapRunnable("122");
+        for(int i=0;i<30;i++){
+            Thread t = new Thread(s);
+            t.start();
+        }
+        System.out.println("RESULT:-------------"+s.i);
     }
 }
